@@ -38,7 +38,9 @@ public class BaseTest {
 
     public void tearDown() {
 
-    	logger.info("Closing Browser");
+    	System.out.println("Driver in tearDown = " + driver);
+
+        logger.info("Closing Browser");
 
         DriverFactory.quitDriver();
 

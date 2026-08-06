@@ -83,11 +83,28 @@ public class LoginPage {
         return successMessage.isDisplayed();
 
     }
-
     public String getErrorMessage() {
 
-        return errorMessage.getText();
+        WaitHelper wait = new WaitHelper(driver);
 
+        wait.waitForElementVisible(errorMessage);
+
+        for (int i = 0; i < 10; i++) {
+
+            String text = errorMessage.getText().trim();
+
+            if (!text.isEmpty()) {
+                return text;
+            }
+
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        return errorMessage.getText().trim();
     }
 
 }
