@@ -9,10 +9,11 @@ target/
 # TestNG
 test-output/
 
-# Reports
-reports/
-screenshots/
-logs/
+# Generated reports (only project root folders)
+
+/reports/
+/screenshots/
+/logs/
 
 # OS
 Thumbs.db
